@@ -1,13 +1,15 @@
 <div class="carousel-container">
-  <alpha-child
-    *ngIf="currentSlide === 0"
-    [@slideAnimation]="currentSlide === 0 ? 'slideRight' : 'slideLeft'">
+  <alpha-child  
+    [@flyInOut]="alphaState"
+    >
   </alpha-child>
   <beta-child
-    *ngIf="currentSlide === 1"
-    [@slideAnimation]="currentSlide === 1 ? 'slideRight' : 'slideLeft'"
-    >
+  [@flyInOut]="betaState"
+  >
   </beta-child>
+  <gamma-child 
+ [@flyInOut]="gammaState">
+  </gamma-child>
 </div>
 <button (click)="slideLeft()">Slide Left</button>
 <button (click)="slideRight()">Slide Right</button>

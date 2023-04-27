@@ -2,49 +2,54 @@ import { Component } from '@angular/core';
 import {
   trigger,
   transition,
-  useAnimation,
   style,
   animate,
-  animation
+  state
 } from '@angular/animations';
-
-export const slideIn = animation([
-  style({ transform: "translateX({{start}})" }),
-  animate("{{time}}", style({ transform: "translateX(0%)" }))
-]);
-
-export const slideOut = animation([
-  animate("{{time}}", style({ transform: "translateX({{end}})" }))
-]);
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   animations: [
-    trigger("slideAnimation", [
-      transition(":enter", [
-        useAnimation(slideIn, { params: { start: "-100%", time: "250ms" } })
-      ]),
-      transition(":leave", [
-        useAnimation(slideOut, { params: { end: "100%", time: "250ms" } })
-      ]),
-    ])
-  ]
+  trigger('flyInOut', [
+    state('offScreenLeft', style({  transform: 'translateX(-100%)' })),
+    state('onScreen', style({  transform: 'translateX(0)' })),
+    state('offScreenRight', style({  transform: 'translateX(100%)' })),
+    transition('*  <=>  *',  animate('250ms'))
+  ]),
+  ],
 })
 export class AppComponent {
   title = 'angular-carousel-components';
-  currentSlide = 0;
+  alphaState: string  = 'offScreenLeft';
+  betaState: string  = 'onScreen';
+  gammaState: string  = 'offScreenRight';
 
-  slideLeft() {
-    if (this.currentSlide > 0) {
-      this.currentSlide--;
-    }
-  }
 
   slideRight() {
-    if (this.currentSlide < 1) {
-      this.currentSlide++;
+    if (this.alphaState === 'offScreenLeft') {
+      this.alphaState = 'onScreen';
+      this.betaState = 'offScreenRight';
+    }
+    if (this.alphaState === 'onScreen') {
+      this.alphaState = 'offScreenRight';
     }
   }
+  
+  slideLeft() {
+    if (this.alphaState === 'offScreenRight') {
+      this.alphaState = 'onScreen';
+      this.betaState = 'offScreenLeft';
+    }
+    if (this.alphaState === 'onScreen') {
+      this.alphaState = 'offScreenLeft';
+      this.gammaState = 'onScreen';
+    }
+
+    if (this.alphaState === 'offScreenLeft') {
+      this.gammaState = 'onScreen';
+    }
+  }
+  
 }

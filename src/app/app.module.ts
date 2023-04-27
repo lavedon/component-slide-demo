@@ -5,12 +5,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AlphaChildComponent } from './alpha-child/alpha-child.component';
 import { BetaChildComponent } from './beta-child/beta-child.component';
+import { GammaChildComponent } from './gamma-child/gamma-child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlphaChildComponent,
-    BetaChildComponent
+    BetaChildComponent,
+    GammaChildComponent
   ],
   imports: [
     BrowserModule,
