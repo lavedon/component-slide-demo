@@ -24,16 +24,16 @@ export const slideOut = animation([
   animations: [
     trigger("slideAnimation", [
       transition("void => slideLeft", [
-        useAnimation(slideIn, { params: { start: "-100%", time: "500ms" } })
+        useAnimation(slideIn, { params: { start: "-100%", time: "250ms" } })
       ]),
       transition("slideLeft => void", [
-        useAnimation(slideOut, { params: { end: "100%", time: "500ms" } })
+        useAnimation(slideOut, { params: { end: "100%", time: "250ms" } })
       ]),
       transition("void => slideRight", [
-        useAnimation(slideIn, { params: { start: "100%", time: "500ms" } })
+        useAnimation(slideIn, { params: { start: "100%", time: "250ms" } })
       ]),
       transition("slideRight => void", [
-        useAnimation(slideOut, { params: { end: "-100%", time: "500ms" } })
+        useAnimation(slideOut, { params: { end: "-100%", time: "250ms" } })
       ])
     ])
   ]
