@@ -23,18 +23,12 @@ export const slideOut = animation([
   styleUrls: ['./app.component.css'],
   animations: [
     trigger("slideAnimation", [
-      transition("void => slideLeft", [
+      transition(":enter", [
         useAnimation(slideIn, { params: { start: "-100%", time: "250ms" } })
       ]),
-      transition("slideLeft => void", [
+      transition(":leave", [
         useAnimation(slideOut, { params: { end: "100%", time: "250ms" } })
       ]),
-      transition("void => slideRight", [
-        useAnimation(slideIn, { params: { start: "100%", time: "250ms" } })
-      ]),
-      transition("slideRight => void", [
-        useAnimation(slideOut, { params: { end: "-100%", time: "250ms" } })
-      ])
     ])
   ]
 })
