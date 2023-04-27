@@ -1,15 +1,15 @@
 <div class="carousel-container">
-  <alpha-child  
-    [@flyInOut]="alphaState"
+  <left-child  
+    [@flyInOut]="leftState"
     >
-  </alpha-child>
-  <beta-child
-  [@flyInOut]="betaState"
+  </left-child>
+  <middle-child
+  [@flyInOut]="middleState"
   >
-  </beta-child>
-  <gamma-child 
- [@flyInOut]="gammaState">
-  </gamma-child>
+  </middle-child>
+  <right-child 
+ [@flyInOut]="rightState">
+  </right-child>
 </div>
 <button (click)="slideLeft()">Slide Left</button>
 <button (click)="slideRight()">Slide Right</button>

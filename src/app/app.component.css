@@ -7,9 +7,9 @@
   overflow: hidden;
 }
 
-alpha-child,
-beta-child,
-gamma-child {
+left-child,
+middle-child,
+right-child {
   position: absolute;
   top: 0;
   left: 0;

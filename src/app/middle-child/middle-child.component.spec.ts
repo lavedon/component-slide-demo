@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BetaChildComponent } from './beta-child.component';
+import { middleChildComponent } from './middle-child.component';
 
-describe('BetaChildComponent', () => {
-  let component: BetaChildComponent;
-  let fixture: ComponentFixture<BetaChildComponent>;
+describe('middleChildComponent', () => {
+  let component: middleChildComponent;
+  let fixture: ComponentFixture<middleChildComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BetaChildComponent ]
+      declarations: [ middleChildComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BetaChildComponent);
+    fixture = TestBed.createComponent(middleChildComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

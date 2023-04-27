@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GammaChildComponent } from './gamma-child.component';
+import { leftChildComponent } from './left-child.component';
 
-describe('GammaChildComponent', () => {
-  let component: GammaChildComponent;
-  let fixture: ComponentFixture<GammaChildComponent>;
+describe('leftChildComponent', () => {
+  let component: leftChildComponent;
+  let fixture: ComponentFixture<leftChildComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GammaChildComponent ]
+      declarations: [ leftChildComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GammaChildComponent);
+    fixture = TestBed.createComponent(leftChildComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

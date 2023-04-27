@@ -22,33 +22,29 @@ import {
 })
 export class AppComponent {
   title = 'angular-carousel-components';
-  alphaState: string  = 'offScreenLeft';
-  betaState: string  = 'onScreen';
-  gammaState: string  = 'offScreenRight';
+  leftState: string  = 'offScreenLeft';
+  middleState: string  = 'onScreen';
+  rightState: string  = 'offScreenRight';
 
 
   slideRight() {
-    if (this.alphaState === 'offScreenLeft') {
-      this.alphaState = 'onScreen';
-      this.betaState = 'offScreenRight';
+    if (this.middleState === 'onScreen') {
+      this.middleState = 'offScreenRight';
+      this.leftState = 'onScreen';
     }
-    if (this.alphaState === 'onScreen') {
-      this.alphaState = 'offScreenRight';
+    if (this.rightState === 'onScreen') {
+      this.rightState = 'offScreenRight';
+      this.middleState = 'onScreen';
     }
-  }
-  
+  } 
   slideLeft() {
-    if (this.alphaState === 'offScreenRight') {
-      this.alphaState = 'onScreen';
-      this.betaState = 'offScreenLeft';
+    if (this.middleState === 'onScreen') {
+      this.middleState = 'offScreenLeft';
+      this.rightState = 'onScreen';
     }
-    if (this.alphaState === 'onScreen') {
-      this.alphaState = 'offScreenLeft';
-      this.gammaState = 'onScreen';
-    }
-
-    if (this.alphaState === 'offScreenLeft') {
-      this.gammaState = 'onScreen';
+    if (this.leftState === 'onScreen') {
+      this.leftState = 'offScreenLeft';
+      this.middleState = 'onScreen';
     }
   }
   

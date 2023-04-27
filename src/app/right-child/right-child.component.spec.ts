@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AlphaChildComponent } from './alpha-child.component';
+import { rightChildComponent } from './right-child.component';
 
-describe('AlphaChildComponent', () => {
-  let component: AlphaChildComponent;
-  let fixture: ComponentFixture<AlphaChildComponent>;
+describe('rightChildComponent', () => {
+  let component: rightChildComponent;
+  let fixture: ComponentFixture<rightChildComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AlphaChildComponent ]
+      declarations: [ rightChildComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AlphaChildComponent);
+    fixture = TestBed.createComponent(rightChildComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
