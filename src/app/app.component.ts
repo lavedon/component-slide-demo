@@ -48,4 +48,12 @@ export class AppComponent {
     }
   }
   
+  onAnimationStart(event: any) {
+    console.log('onAnimationStart', event);
+  }
+
+  onAnimationDone(event: any) {
+    console.log('onAnimationDone', event);
+  }
+  
 }

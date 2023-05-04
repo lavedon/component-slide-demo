@@ -1,14 +1,21 @@
 <div class="carousel-container">
   <left-child  
     [@flyInOut]="leftState"
+    (@flyInOut.start)="onAnimationStart($event)"
+    (@flyInOut.done)="onAnimationDone($event)"
     >
   </left-child>
   <middle-child
   [@flyInOut]="middleState"
+  (@flyInOut.start)="onAnimationStart($event)"
+  (@flyInOut.done)="onAnimationDone($event)"
   >
   </middle-child>
   <right-child 
- [@flyInOut]="rightState">
+  [@flyInOut]="rightState"
+  (@flyInOut.start)="onAnimationStart($event)"
+  (@flyInOut.done)="onAnimationDone($event)"
+  >
   </right-child>
 </div>
 <button (click)="slideLeft()">Slide Left</button>
