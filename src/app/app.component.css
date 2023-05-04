@@ -10,7 +10,7 @@
 left-child,
 middle-child,
 right-child {
-  position: absolute;
+  flex-shrink: 0;
   top: 0;
   left: 0;
   width: 100%;
