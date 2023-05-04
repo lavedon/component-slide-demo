@@ -14,7 +14,6 @@ import {
   animations: [
   trigger('flyInOut', [
     state('offScreenLeft', style({  transform: 'translateX(-100%)' })),
-    state('onScreen', style({  transform: 'translateX(0)' })),
     state('offScreenRight', style({  transform: 'translateX(100%)' })),
     transition('*  <=>  *',  animate('250ms'))
   ]),
@@ -22,32 +21,17 @@ import {
 })
 export class AppComponent {
   title = 'angular-carousel-components';
-  leftState: string  = 'offScreenLeft';
-  middleState: string  = 'onScreen';
+  leftState: string  = 'onScreen';
   rightState: string  = 'offScreenRight';
 
 
   slideRight() {
-    if (this.middleState === 'onScreen') {
-      this.middleState = 'offScreenRight';
-      this.leftState = 'onScreen';
-    }
-    if (this.rightState === 'onScreen') {
-      this.rightState = 'offScreenRight';
-      this.middleState = 'onScreen';
-    }
-  } 
-  slideLeft() {
-    if (this.middleState === 'onScreen') {
-      this.middleState = 'offScreenLeft';
-      this.rightState = 'onScreen';
-    }
-    if (this.leftState === 'onScreen') {
-      this.leftState = 'offScreenLeft';
-      this.middleState = 'onScreen';
-    }
+    [this.leftState, this.rightState] = ['offScreenLeft', 'onScreen'];
   }
-  
+  slideLeft() {
+    [this.leftState, this.rightState] = ['onScreen', 'offScreenRight'];
+  }
+
   onAnimationStart(event: any) {
     console.log('onAnimationStart', event);
   }
@@ -55,5 +39,5 @@ export class AppComponent {
   onAnimationDone(event: any) {
     console.log('onAnimationDone', event);
   }
-  
+
 }
